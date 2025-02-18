@@ -7,46 +7,57 @@ class ChatHeads extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
         height: MediaQuery.of(context).size.height / 12,
-        child: const Expanded(
-          child: ListTile(
-            leading: CircleAvatar(
-                backgroundImage: NetworkImage(
-                    "https://cdn.pixabay.com/photo/2023/01/08/14/22/sample-7705346_640.jpg")),
-            title: Expanded(
-              flex: 1,
-              child: Text(
-                "Nasim Dribble",
-                style: TextStyle(
-                    fontSize: 12,
-                    color: Colors.black,
-                    fontWeight: FontWeight.w800),
-              ),
+        width: 300,
+        child: const Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Expanded(
+              flex: 0,
+              child: CircleAvatar(
+                  backgroundImage: NetworkImage(
+                      "https://cdn.pixabay.com/photo/2023/01/08/14/22/sample-7705346_640.jpg")),
             ),
-            subtitle: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Expanded(
-                  flex: 2,
-                  child: Text(
-                    "hoy hoy buloy",
-                    style: TextStyle(
-                        fontSize: 10,
-                        color: Colors.grey,
-                        fontWeight: FontWeight.bold),
+            Expanded(
+              child: Padding(
+                padding: EdgeInsets.only(left: 10, top: 10),
+                child: SizedBox(
+                  height: 50,
+                  width: 100,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        child: Text(
+                          "Nasim Dribble",
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: Text(
+                          "hoy hoy hoy",
+                          style: TextStyle(
+                            color: Colors.grey,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-              ],
-            ),
-            trailing: Expanded(
-              child: Text(
-                "20 min",
-                style: TextStyle(
-                    fontSize: 10,
-                    color: Colors.grey,
-                    fontWeight: FontWeight.bold),
               ),
             ),
-          ),
+            SizedBox(
+              width: 20,
+            ),
+            Expanded(
+              child: Text(
+                "20 min",
+                style:
+                    TextStyle(color: Colors.black, fontWeight: FontWeight.w500),
+              ),
+            ),
+          ],
         ));
   }
 }
